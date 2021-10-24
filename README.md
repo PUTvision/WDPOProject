@@ -55,9 +55,20 @@ Szablon projektu zliczania owoców na zdjęciach dostępny jest w serwisie [GitH
 
 Katalog [`data`](./data) zawiera przykłady, na podstawie których w pliku [`detect_fruits.py`](./detect_fruits.py) przygotowany ma zostać algorytm zliczania owoców. Funkcja `main` w pliku `detect_fruits.py` powinna pozostać bez zmian. 
 
+### Wykorzystanie szablonu
+
+W przypadku chęci wykorzystania przygotowanego szablonu oraz systemu kontroli wersji w postaci serwisu GitHub możliwe jest stworzenie własnego repozytorium na podstawie szablonu. W tym celu należy poprzez przycisk `Use this template` utworzyć nowe repozytorium wybierając swoje konto jako właściciela, nadając mu własną nazwę i obowiązkowo ustawiając widzialność jako **prywatne**. Powyższe kroki zostały przedstawione na załączonych zdjęciach.
+
+<p align="center">
+  <img width="900" height="200" src="./readme_files/create_repo_from_template_01.png">
+</p>
+<p align="center">
+  <img width="600" height="500" src="./readme_files/create_repo_from_template_02.png">
+</p>
+
 ### Biblioteki
 
-Interpreter testujący projekty będzie miał zainstalowane dodatkowo biblioteki:
+Interpreter testujący projekty będzie miał zainstalowane biblioteki:
 - [OpenCV](https://docs.opencv.org/master/) w wersji 4.5.3.56
 - [NumPy](https://numpy.org/) w wersji 1.19.5
 - [Click](https://palletsprojects.com/p/click/) w wersji 7.1.2
