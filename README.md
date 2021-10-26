@@ -132,5 +132,22 @@ Skompresowany plik należy wstawić w odpowiednim miejscu na platformie eKursy.
 
 ## Ewaluacja rozwiązań
 
+Przesłane rozwiązania zostaną sprawdzone pod kątem plagiatu oraz z wykorzystaniem poniższego wzoru ocenione będzie działanie algorytmu zliczania owoców:  
 
-**Ostatnia edycja:** 24.10.2021
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?\bg_white&space;Mean&space;Absolute&space;Relative&space;Percentage&space;Error&space;[%]&space;=&space;\frac{100}{n}\sum_{t=0}^{n-1}\frac{\left|y_{a}-\widehat{y_{a}}\right|&space;&plus;&space;\left|y_{b}-\widehat{y_{b}}\right|&space;&plus;&space;\left|y_{o}-\widehat{y_{o}}\right|}{y_{a}&plus;y_{b}&plus;y_{o}}" title="\bg_white Mean Absolute Relative Percentage Error [%] = \frac{100}{n}\sum_{t=0}^{n-1}\frac{\left|y_{a}-\widehat{y_{a}}\right| + \left|y_{b}-\widehat{y_{b}}\right| + \left|y_{o}-\widehat{y_{o}}\right|}{y_{a}+y_{b}+y_{o}}" style="background-color: white"/>
+</p>
+
+Gdzie:
+- n oznacza liczbę obrazów
+- $y_a$ oznacza rzeczywistą ilość jabłek
+- $\widehat{y_a}$ oznacza przewidzianą ilość jabłek
+- $y_b$ oznacza rzeczywistą ilość bananów
+- $\widehat{y_b}$ oznacza przewidzianą ilość bananów
+- $y_o$ oznacza rzeczywistą ilość pomarańczy
+- $\widehat{y_o}$ oznacza przewidzianą ilość pomarańczy
+
+Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Przed końcowym terminem oddania projektu każdy student będzie miał możliwość maksymalnie raz sprawdzić działanie swojego algorytmu na zbiorze testowym (innym niż ewaluacyjny) poprzez przesłanie swojego rozwiązania we wskazanym, wcześniejszym terminie. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data](./data/).
+
+
+**Ostatnia edycja:** 26.10.2021
