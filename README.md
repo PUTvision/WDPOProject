@@ -139,13 +139,9 @@ Przesłane rozwiązania zostaną sprawdzone pod kątem plagiatu oraz z wykorzyst
 </p>
 
 Gdzie:
-- n oznacza liczbę obrazów
-- $y_a$ oznacza rzeczywistą ilość jabłek
-- $\widehat{y_a}$ oznacza przewidzianą ilość jabłek
-- $y_b$ oznacza rzeczywistą ilość bananów
-- $\widehat{y_b}$ oznacza przewidzianą ilość bananów
-- $y_o$ oznacza rzeczywistą ilość pomarańczy
-- $\widehat{y_o}$ oznacza przewidzianą ilość pomarańczy
+- ![](https://render.githubusercontent.com/render/math?math=n) oznacza liczbę obrazów
+- ![](https://render.githubusercontent.com/render/math?math=y_x) oznacza rzeczywistą ilość danego typu owoca
+- ![](https://render.githubusercontent.com/render/math?math=\widehat{y_x}) oznacza przewidzianą ilość danego typu owoca
 
 Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Przed końcowym terminem oddania projektu każdy student będzie miał możliwość maksymalnie raz sprawdzić działanie swojego algorytmu na zbiorze testowym (innym niż ewaluacyjny) poprzez przesłanie swojego rozwiązania we wskazanym, wcześniejszym terminie. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data](./data/).
 
