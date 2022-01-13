@@ -1,11 +1,10 @@
-import cv2
 import json
-import click
-
-from glob import glob
-from tqdm import tqdm
-
+from pathlib import Path
 from typing import Dict
+
+import click
+import cv2
+from tqdm import tqdm
 
 
 def detect_fruits(img_path: str) -> Dict[str, int]:
@@ -33,21 +32,19 @@ def detect_fruits(img_path: str) -> Dict[str, int]:
 
 
 @click.command()
-@click.option('-p', '--data_path', help='Path to data directory')
-@click.option('-o', '--output_file_path', help='Path to output file')
-def main(data_path, output_file_path):
-
-    img_list = glob(f'{data_path}/*.jpg')
+@click.option('-p', '--data_path', help='Path to data directory', type=click.Path(exists=True, file_okay=False,
+                                                                                  path_type=Path), required=True)
+@click.option('-o', '--output_file_path', help='Path to output file', type=click.Path(dir_okay=False, path_type=Path),
+              required=True)
+def main(data_path: Path, output_file_path: Path):
+    img_list = data_path.glob('*.jpg')
 
     results = {}
 
     for img_path in tqdm(sorted(img_list)):
-        fruits = detect_fruits(img_path)
+        fruits = detect_fruits(str(img_path))
+        results[img_path.name] = fruits
 
-        filename = img_path.split('/')[-1]
-
-        results[filename] = fruits
-    
     with open(output_file_path, 'w') as ofp:
         json.dump(results, ofp)
 
