@@ -11,7 +11,9 @@
 Wraz z postępem technologicznym w obszarze sensorów wizyjnych wzrosło zapotrzebowanie na rozwiązania umożliwiające automatyzację procesów z wykorzystaniem wizyjnej informacji zwrotnej. Ponadto rozwój naukowy w zakresie algorytmów przetwarzania obrazu umożliwia wyciąganie ze zdjęć takich informacji jak ilość obiektów, ich rozmiar, położenie, a także orientacja. Jedną z aplikacji wykorzystujących przetwarzanie obrazu są na przykład bezobsługowe kasy pozwalające rozpoznać i zliczyć produkty, które znajdują się w koszyku.
 
 ## Changelog
-**Ostatnia edycja:** 14.01.2022
+**Ostatnia edycja:** 23.01.2022
+
+- 23.01.2022 -  automatyczna sprawdzarka została uruchomiona; został dodany do repozytorium skrypt [`check.py`](./check.py) przesyłający folder projektowy do sprawdzarki
 
 - 14.01.2022 - niezbędne biblioteki zostały dodane do pliku requirements.txt; w skrypcie detect_fruits.py wykorzystana została biblioteka pathlib, która eliminuje problemy związane ze śceiżkami do plików w systemie Windows
 
@@ -149,4 +151,8 @@ Gdzie:
 - ![](https://render.githubusercontent.com/render/math?math=y_x) oznacza rzeczywistą ilość danego typu owoca
 - ![](https://render.githubusercontent.com/render/math?math=\widehat{y_x}) oznacza przewidzianą ilość danego typu owoca
 
-Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Przed końcowym terminem oddania projektu każdy student będzie miał możliwość maksymalnie raz sprawdzić działanie swojego algorytmu na zbiorze testowym (innym niż ewaluacyjny) poprzez przesłanie swojego rozwiązania we wskazanym, wcześniejszym terminie. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data](./data/).
+Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data](./data/).
+
+### Automatyczna sprawdzarka
+
+W celu weryfikacji wyników na zbiorze walidacyjnym uruchomiona została sprawdzarka z której można skorzystać wywołując skrypt `check.py`. Sprawdzarka zwraca wynik miary *MARPE* dla wykorzystanego zbioru lub wyjście z konsoli zawierające wiadomość błędu jaki wystąpił podczas uruchamiania skryptu. Sprawdzarka analzuje jedynie wyniki studentów zapisanych na kurs (w serwisie eKursy), dlatego w skrypcie [`check.py`](./check.py) należy ustawić swój numer indeksu. Z systemu sprawdzającego każdy student może skorzystać raz na 15 minut. 
