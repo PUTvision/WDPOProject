@@ -13,7 +13,9 @@ Wraz z postępem technologicznym w obszarze sensorów wizyjnych wzrosło zapotrz
 ## Changelog
 **Ostatnia edycja:** 23.01.2022
 
-- 23.01.2022 -  automatyczna sprawdzarka została uruchomiona; został dodany do repozytorium skrypt [`check.py`](./check.py) przesyłający folder projektowy do sprawdzarki
+- 23.01.2022 - w opisie projektu umieszczone zostały progi punktowe  
+
+- 23.01.2022 - automatyczna sprawdzarka została uruchomiona; został dodany do repozytorium skrypt [`check.py`](./check.py) przesyłający folder projektowy do sprawdzarki
 
 - 14.01.2022 - niezbędne biblioteki zostały dodane do pliku requirements.txt; w skrypcie detect_fruits.py wykorzystana została biblioteka pathlib, która eliminuje problemy związane ze śceiżkami do plików w systemie Windows
 
@@ -155,4 +157,17 @@ Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubli
 
 ### Automatyczna sprawdzarka
 
-W celu weryfikacji wyników na zbiorze walidacyjnym uruchomiona została sprawdzarka z której można skorzystać wywołując skrypt `check.py`. Sprawdzarka zwraca wynik miary *MARPE* dla wykorzystanego zbioru lub wyjście z konsoli zawierające wiadomość błędu jaki wystąpił podczas uruchamiania skryptu. Sprawdzarka analzuje jedynie wyniki studentów zapisanych na kurs (w serwisie eKursy), dlatego w skrypcie [`check.py`](./check.py) należy ustawić swój numer indeksu. Z systemu sprawdzającego każdy student może skorzystać raz na 15 minut. 
+W celu weryfikacji wyników na zbiorze walidacyjnym uruchomiona została sprawdzarka z której można skorzystać wywołując skrypt `check.py`. Sprawdzarka zwraca wynik miary *MARPE* dla wykorzystanego zbioru lub wyjście z konsoli zawierające wiadomość błędu jaki wystąpił podczas uruchamiania skryptu. Sprawdzarka analzuje jedynie wyniki studentów zapisanych na kurs (w serwisie eKursy), dlatego w skrypcie [`check.py`](./check.py) należy ustawić swój numer indeksu. Z systemu sprawdzającego każdy student może skorzystać raz na 15 minut.
+
+### Progi punktowe
+
+Projekt będzie oceniany biorąc pod uwagę osiągnięty wynik miary *MARPE* na zbiorze testowym zgodnie z przyjętymi zakresami (przedziały prawostronnie domknięte):
+  
+| Wartość metryki MARPE | Ocena |
+|:---------------------:|:-----:|
+|         ≤ 9 %         |  5.0  |
+|        9 - 18 %       |  4.5  |
+|       18 - 27 %       |  4.0  |
+|       27 - 36 %       |  3.5  |
+|       36 - 45 %       |  3.0  |
+|         > 45 %        |  2.0  |
