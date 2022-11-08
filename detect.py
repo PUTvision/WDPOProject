@@ -7,8 +7,8 @@ import cv2
 from tqdm import tqdm
 
 
-def detect_fruits(img_path: str) -> Dict[str, int]:
-    """Fruit detection function, to implement.
+def detect(img_path: str) -> Dict[str, int]:
+    """Object detection function, according to the project description, to implement.
 
     Parameters
     ----------
@@ -18,17 +18,18 @@ def detect_fruits(img_path: str) -> Dict[str, int]:
     Returns
     -------
     Dict[str, int]
-        Dictionary with quantity of each fruit.
+        Dictionary with quantity of each object.
     """
     img = cv2.imread(img_path, cv2.IMREAD_COLOR)
 
     #TODO: Implement detection method.
     
-    apple = 0
-    banana = 0
-    orange = 0
+    red = 0
+    yellow = 0
+    green = 0
+    purple = 0
 
-    return {'apple': apple, 'banana': banana, 'orange': orange}
+    return {'red': red, 'yellow': yellow, 'green': green, 'purple': purple}
 
 
 @click.command()
@@ -42,7 +43,7 @@ def main(data_path: Path, output_file_path: Path):
     results = {}
 
     for img_path in tqdm(sorted(img_list)):
-        fruits = detect_fruits(str(img_path))
+        fruits = detect(str(img_path))
         results[img_path.name] = fruits
 
     with open(output_file_path, 'w') as ofp:

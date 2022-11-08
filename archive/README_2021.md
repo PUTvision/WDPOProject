@@ -3,7 +3,7 @@
 ## Politechnika Poznańska, Instytut Robotyki i Inteligencji Maszynowej
 
 <p align="center">
-  <img width="180" height="180" src="./readme_files/logo.png">
+  <img width="180" height="180" src="../readme_files/logo.png">
 </p>
 
 # **Projekt zaliczeniowy: zliczanie owoców**
@@ -15,9 +15,9 @@ Wraz z postępem technologicznym w obszarze sensorów wizyjnych wzrosło zapotrz
 
 - 23.01.2022 - w opisie projektu umieszczone zostały progi punktowe  
 
-- 23.01.2022 - automatyczna sprawdzarka została uruchomiona; został dodany do repozytorium skrypt [`check.py`](./check.py) przesyłający folder projektowy do sprawdzarki
+- 23.01.2022 - automatyczna sprawdzarka została uruchomiona; został dodany do repozytorium skrypt [`check.py`](../check.py) przesyłający folder projektowy do sprawdzarki
 
-- 14.01.2022 - niezbędne biblioteki zostały dodane do pliku requirements.txt; w skrypcie detect_fruits.py wykorzystana została biblioteka pathlib, która eliminuje problemy związane ze śceiżkami do plików w systemie Windows
+- 14.01.2022 - niezbędne biblioteki zostały dodane do pliku requirements.txt; w skrypcie detect.py wykorzystana została biblioteka pathlib, która eliminuje problemy związane ze śceiżkami do plików w systemie Windows
 
 
 ## Zadanie
@@ -44,7 +44,7 @@ Poniżej przedstawione zostało przykładowe zdjęcie ze zbioru danych i poprawn
 ```
 
 <p align="center">
-  <img width="750" height="500" src="./data/07.jpg">
+  <img width="750" height="500" src="../data/2021/07.jpg">
 </p>
 
 ## Struktura projektu
@@ -54,26 +54,27 @@ Szablon projektu zliczania owoców na zdjęciach dostępny jest w serwisie [GitH
 ```bash
 .
 ├── data
-│   ├── 00.jpg
-│   ├── 01.jpg
-│   └── 02.jpg
+│   └── 2021
+│       ├── 00.jpg
+│       ├── 01.jpg
+│       └── 02.jpg
 ├── readme_files
-├── detect_fruits.py
+├── detect.py
 ├── README.md
 └── requirements.txt
 ```
 
-Katalog [`data`](./data) zawiera przykłady, na podstawie których w pliku [`detect_fruits.py`](./detect_fruits.py) przygotowany ma zostać algorytm zliczania owoców. Funkcja `main` w pliku `detect_fruits.py` powinna pozostać bez zmian. 
+Katalog [`data`](../data) zawiera przykłady, na podstawie których w pliku [`detect.py`](../detect.py) przygotowany ma zostać algorytm zliczania owoców. Funkcja `main` w pliku `detect.py` powinna pozostać bez zmian. 
 
 ### Wykorzystanie szablonu
 
 W przypadku chęci wykorzystania przygotowanego szablonu oraz systemu kontroli wersji w postaci serwisu GitHub możliwe jest stworzenie własnego repozytorium na podstawie szablonu. W tym celu należy poprzez przycisk `Use this template` utworzyć nowe repozytorium wybierając swoje konto jako właściciela, nadając mu własną nazwę i obowiązkowo ustawiając widzialność jako **prywatne**. Powyższe kroki zostały przedstawione na załączonych zdjęciach.
 
 <p align="center">
-  <img width="900" height="200" src="./readme_files/create_repo_from_template_01.png">
+  <img width="900" height="200" src="../readme_files/create_repo_from_template_01.png">
 </p>
 <p align="center">
-  <img width="600" height="500" src="./readme_files/create_repo_from_template_02.png">
+  <img width="600" height="500" src="../readme_files/create_repo_from_template_02.png">
 </p>
 
 ### Biblioteki
@@ -97,12 +98,12 @@ Więcej informacji na temat zastosowania plików `requirements.txt` można znale
 
 ### Wywyołanie programu
 
-Skrypt `detect_fruits.py` przyjmuje 2 parametry wejściowe:
+Skrypt `detect.py` przyjmuje 2 parametry wejściowe:
 - `data_path` - ścieżkę do folderu z danymi (zdjęciami)
 - `output_file_path` - ścieżkę do pliku z wynikami
 
 ```bash
-$ python3 detect_fruits.py --help
+$ python3 detect.py --help
 
 Options:
   -p, --data_path TEXT         Path to data directory
@@ -113,19 +114,19 @@ Options:
 W konsoli systemu Linux skrypt można wywołać z katalogu projektu w następujący sposób:
 
 ```bash
-python3 detect_fruits.py -p ./data -o ./results.json
+python3 detect.py -p ./data -o ./results.json
 ```
 
-W środowisku PyCharm możliwe jest dodanie parametrów wejściowych do skryptu, z którymi program będzie wywoływany każdorazowo przy uruchomieniu. W tym celu należy otworzyć okno konfiguracji z górnego menu `Run > Edit Configurations...`. W otwartym oknie konfiguracji poprzez symbol `+` należy dodać nową konfigurację dla języka Python. Tworzonej konfiguracji należy nadać nazwę, uzupełnić ścieżkę do pliku `detect_fruits.py` oraz uzupełnić ścieżki do parametrów wejściowych skryptu zgodnie z powyższym opisem oraz ostanim rysunkiem.
+W środowisku PyCharm możliwe jest dodanie parametrów wejściowych do skryptu, z którymi program będzie wywoływany każdorazowo przy uruchomieniu. W tym celu należy otworzyć okno konfiguracji z górnego menu `Run > Edit Configurations...`. W otwartym oknie konfiguracji poprzez symbol `+` należy dodać nową konfigurację dla języka Python. Tworzonej konfiguracji należy nadać nazwę, uzupełnić ścieżkę do pliku `detect.py` oraz uzupełnić ścieżki do parametrów wejściowych skryptu zgodnie z powyższym opisem oraz ostanim rysunkiem.
 
 <p align="center">
-  <img width="800" height="500" src="./readme_files/args_config_01.png">
+  <img width="800" height="500" src="../readme_files/args_config_01.png">
 </p>
 <p align="center">
-  <img width="800" height="500" src="./readme_files/args_config_02.png">
+  <img width="800" height="500" src="../readme_files/args_config_02.png">
 </p>
 <p align="center">
-  <img width="800" height="500" src="./readme_files/args_config_03.png">
+  <img width="800" height="500" src="../readme_files/args_config_03.png">
 </p>
 
 ## Przesyłanie rozwiązania
@@ -133,12 +134,12 @@ W środowisku PyCharm możliwe jest dodanie parametrów wejściowych do skryptu,
 Stworzone rozwiązanie należy skompresować do formatu `ZIP`, a wyjściowy plik nazwać numerem indeksu (np. 123456.zip). Zadanie to można przykładowo zrealizować w systemach Linux z wykorzystaniem komendy systemowej `zip` w terminalu tak, jak to zostało przedstawione poniżej:
 
 ```bash
-zip <NUMER INDEKSU>.zip detect_fruits.py requirements.txt
+zip <NUMER INDEKSU>.zip detect.py requirements.txt
 ```
 
 Skompresowany plik należy wstawić w odpowiednim miejscu na platformie eKursy.
 
-**Uwaga:** w pliku `.zip` powinien znajdować się jedynie bezpośrednio plik `detect_fruits.py` oraz opcjonalnie `requirements.txt`.
+**Uwaga:** w pliku `.zip` powinien znajdować się jedynie bezpośrednio plik `detect.py` oraz opcjonalnie `requirements.txt`.
 
 ## Ewaluacja rozwiązań
 
@@ -153,11 +154,11 @@ Gdzie:
 - ![](https://render.githubusercontent.com/render/math?math=y_x) oznacza rzeczywistą ilość danego typu owoca
 - ![](https://render.githubusercontent.com/render/math?math=\widehat{y_x}) oznacza przewidzianą ilość danego typu owoca
 
-Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data](./data/).
+Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data](../data/).
 
 ### Automatyczna sprawdzarka
 
-W celu weryfikacji wyników na zbiorze walidacyjnym uruchomiona została sprawdzarka z której można skorzystać wywołując skrypt `check.py`. Sprawdzarka zwraca wynik miary *MARPE* dla wykorzystanego zbioru lub wyjście z konsoli zawierające wiadomość błędu jaki wystąpił podczas uruchamiania skryptu. Sprawdzarka analzuje jedynie wyniki studentów zapisanych na kurs (w serwisie eKursy), dlatego w skrypcie [`check.py`](./check.py) należy ustawić swój numer indeksu. Z systemu sprawdzającego każdy student może skorzystać raz na 15 minut.
+W celu weryfikacji wyników na zbiorze walidacyjnym uruchomiona została sprawdzarka z której można skorzystać wywołując skrypt `check.py`. Sprawdzarka zwraca wynik miary *MARPE* dla wykorzystanego zbioru lub wyjście z konsoli zawierające wiadomość błędu jaki wystąpił podczas uruchamiania skryptu. Sprawdzarka analzuje jedynie wyniki studentów zapisanych na kurs (w serwisie eKursy), dlatego w skrypcie [`check.py`](../check.py) należy ustawić swój numer indeksu. Z systemu sprawdzającego każdy student może skorzystać raz na 15 minut.
 
 ### Progi punktowe
 
