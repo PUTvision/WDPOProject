@@ -6,64 +6,61 @@
   <img width="180" height="180" src="./readme_files/logo.png">
 </p>
 
-# **Projekt zaliczeniowy: zliczanie owoców**
+# **Projekt zaliczeniowy: zliczanie cukierków**
 
-Wraz z postępem technologicznym w obszarze sensorów wizyjnych wzrosło zapotrzebowanie na rozwiązania umożliwiające automatyzację procesów z wykorzystaniem wizyjnej informacji zwrotnej. Ponadto rozwój naukowy w zakresie algorytmów przetwarzania obrazu umożliwia wyciąganie ze zdjęć takich informacji jak ilość obiektów, ich rozmiar, położenie, a także orientacja. Jedną z aplikacji wykorzystujących przetwarzanie obrazu są na przykład bezobsługowe kasy pozwalające rozpoznać i zliczyć produkty, które znajdują się w koszyku.
+Wraz z postępem technologicznym w obszarze sensorów wizyjnych wzrosło zapotrzebowanie na rozwiązania umożliwiające automatyzację procesów z wykorzystaniem wizyjnej informacji zwrotnej. Ponadto rozwój naukowy w zakresie algorytmów przetwarzania obrazu umożliwia wyciąganie ze zdjęć takich informacji jak ilość obiektów, ich rozmiar, położenie, a także orientacja. Jedną z aplikacji wykorzystujących przetwarzanie obrazu jest automatyczna kontrola ilości obiektów na linii produkcyjnej wraz z rozróżnieniem ich klasy np. w celu ich sortowania w dalszym kroku.
 
 ## Changelog
-**Ostatnia edycja:** 23.01.2022
-
-- 23.01.2022 - w opisie projektu umieszczone zostały progi punktowe  
-
-- 23.01.2022 - automatyczna sprawdzarka została uruchomiona; został dodany do repozytorium skrypt [`check.py`](./check.py) przesyłający folder projektowy do sprawdzarki
-
-- 14.01.2022 - niezbędne biblioteki zostały dodane do pliku requirements.txt; w skrypcie detect_fruits.py wykorzystana została biblioteka pathlib, która eliminuje problemy związane ze śceiżkami do plików w systemie Windows
+**Ostatnia edycja:** 8.11.2022
 
 
 ## Zadanie
 
-Zadanie projektowe polega na przygotowaniu algorytmu wykrywania i zliczania owoców znajdujących się na zdjęciach. Dla uproszczenia zadania w zbiorze danych występują jedynie 3 rodzaje owoców:
-- jabłka
-- banany
-- pomarańcze
+Zadanie projektowe polega na przygotowaniu algorytmu wykrywania i zliczania kolorowych cukierków znajdujących się na zdjęciach. Dla uproszczenia zadania w zbiorze danych występują jedynie 4 kolory cukierków:
+- czerwony
+- żółty
+- zielony
+- fioletowy
 
-Wszystkie zdjęcia zostały zarejestrowane "z góry", ale z różnej wysokości. Ponadto obrazy różnią się między sobą poziomem oświetlenia oraz oczywiście ilością owoców.
+Wszystkie zdjęcia zostały zarejestrowane "z góry", ale z różnej wysokości i pod różnym kątem. Ponadto obrazy różnią się między sobą poziomem oświetlenia oraz oczywiście ilością cukierków.
 
 Poniżej przedstawione zostało przykładowe zdjęcie ze zbioru danych i poprawny wynik detekcji dla niego:
 
 ```bash
 {
   ...,
-  "07.jpg": {
-    "apple": 2,
-    "banana": 1,
-    "orange": 1
+  "37.jpg": {
+    "red": 2,
+    "yellow": 2,
+    "green": 2,
+    "purple": 2
   },
   ...
 }
 ```
 
 <p align="center">
-  <img width="750" height="500" src="./data/07.jpg">
+  <img width="750" height="500" src="./data/2022/37.jpg">
 </p>
 
 ## Struktura projektu
 
-Szablon projektu zliczania owoców na zdjęciach dostępny jest w serwisie [GitHub](https://github.com/PUTvision/WDPOProject) i ma następującą strukturę:
+Szablon projektu zliczania cukierków na zdjęciach dostępny jest w serwisie [GitHub](https://github.com/PUTvision/WDPOProject) i ma następującą strukturę:
 
 ```bash
 .
 ├── data
-│   ├── 00.jpg
-│   ├── 01.jpg
-│   └── 02.jpg
+│   └── 2022
+│       ├── 00.jpg
+│       ├── 01.jpg
+│       └── 02.jpg
 ├── readme_files
-├── detect_fruits.py
+├── detect.py
 ├── README.md
 └── requirements.txt
 ```
 
-Katalog [`data`](./data) zawiera przykłady, na podstawie których w pliku [`detect_fruits.py`](./detect_fruits.py) przygotowany ma zostać algorytm zliczania owoców. Funkcja `main` w pliku `detect_fruits.py` powinna pozostać bez zmian. 
+Katalog [`data/2022`](./data/2022) zawiera przykłady, na podstawie których w pliku [`detect.py`](./detect.py) przygotowany ma zostać algorytm zliczania cukierków. Funkcja `main` w pliku `detect.py` powinna pozostać bez zmian. 
 
 ### Wykorzystanie szablonu
 
@@ -97,12 +94,12 @@ Więcej informacji na temat zastosowania plików `requirements.txt` można znale
 
 ### Wywyołanie programu
 
-Skrypt `detect_fruits.py` przyjmuje 2 parametry wejściowe:
+Skrypt `detect.py` przyjmuje 2 parametry wejściowe:
 - `data_path` - ścieżkę do folderu z danymi (zdjęciami)
 - `output_file_path` - ścieżkę do pliku z wynikami
 
 ```bash
-$ python3 detect_fruits.py --help
+$ python3 detect.py --help
 
 Options:
   -p, --data_path TEXT         Path to data directory
@@ -113,36 +110,26 @@ Options:
 W konsoli systemu Linux skrypt można wywołać z katalogu projektu w następujący sposób:
 
 ```bash
-python3 detect_fruits.py -p ./data -o ./results.json
+python3 detect.py -p ./data -o ./results.json
 ```
 
-W środowisku PyCharm możliwe jest dodanie parametrów wejściowych do skryptu, z którymi program będzie wywoływany każdorazowo przy uruchomieniu. W tym celu należy otworzyć okno konfiguracji z górnego menu `Run > Edit Configurations...`. W otwartym oknie konfiguracji poprzez symbol `+` należy dodać nową konfigurację dla języka Python. Tworzonej konfiguracji należy nadać nazwę, uzupełnić ścieżkę do pliku `detect_fruits.py` oraz uzupełnić ścieżki do parametrów wejściowych skryptu zgodnie z powyższym opisem oraz ostanim rysunkiem.
-
-<p align="center">
-  <img width="800" height="500" src="./readme_files/args_config_01.png">
-</p>
-<p align="center">
-  <img width="800" height="500" src="./readme_files/args_config_02.png">
-</p>
-<p align="center">
-  <img width="800" height="500" src="./readme_files/args_config_03.png">
-</p>
+Konfiguracja parametrów wejściowych skryptu w środowisku PyCharm została opisana w pliku [PyCharm_input_configuration.md](./PyCharm_input_configuration.md).
 
 ## Przesyłanie rozwiązania
 
 Stworzone rozwiązanie należy skompresować do formatu `ZIP`, a wyjściowy plik nazwać numerem indeksu (np. 123456.zip). Zadanie to można przykładowo zrealizować w systemach Linux z wykorzystaniem komendy systemowej `zip` w terminalu tak, jak to zostało przedstawione poniżej:
 
 ```bash
-zip <NUMER INDEKSU>.zip detect_fruits.py requirements.txt
+zip <NUMER INDEKSU>.zip detect.py requirements.txt
 ```
 
 Skompresowany plik należy wstawić w odpowiednim miejscu na platformie eKursy.
 
-**Uwaga:** w pliku `.zip` powinien znajdować się jedynie bezpośrednio plik `detect_fruits.py` oraz opcjonalnie `requirements.txt`.
+**Uwaga:** w pliku `.zip` powinien znajdować się jedynie bezpośrednio plik `detect.py` oraz opcjonalnie `requirements.txt`.
 
 ## Ewaluacja rozwiązań
 
-Przesłane rozwiązania zostaną sprawdzone pod kątem plagiatu oraz z wykorzystaniem poniższego wzoru ocenione będzie działanie algorytmu zliczania owoców:  
+Przesłane rozwiązania zostaną sprawdzone pod kątem plagiatu oraz z wykorzystaniem poniższego wzoru ocenione będzie działanie algorytmu zliczania cukierków:  
 
 <p align="center">
   <img src="https://latex.codecogs.com/svg.image?\bg_white&space;Mean&space;Absolute&space;Relative&space;Percentage&space;Error&space;[%]&space;=&space;\frac{100}{n}\sum_{t=0}^{n-1}\frac{\left|y_{a}-\widehat{y_{a}}\right|&space;&plus;&space;\left|y_{b}-\widehat{y_{b}}\right|&space;&plus;&space;\left|y_{o}-\widehat{y_{o}}\right|}{y_{a}&plus;y_{b}&plus;y_{o}}" title="\bg_white Mean Absolute Relative Percentage Error [%] = \frac{100}{n}\sum_{t=0}^{n-1}\frac{\left|y_{a}-\widehat{y_{a}}\right| + \left|y_{b}-\widehat{y_{b}}\right| + \left|y_{o}-\widehat{y_{o}}\right|}{y_{a}+y_{b}+y_{o}}" style="background-color: white"/>
@@ -150,12 +137,14 @@ Przesłane rozwiązania zostaną sprawdzone pod kątem plagiatu oraz z wykorzyst
 
 Gdzie:
 - ![](https://render.githubusercontent.com/render/math?math=n) oznacza liczbę obrazów
-- ![](https://render.githubusercontent.com/render/math?math=y_x) oznacza rzeczywistą ilość danego typu owoca
-- ![](https://render.githubusercontent.com/render/math?math=\widehat{y_x}) oznacza przewidzianą ilość danego typu owoca
+- ![](https://render.githubusercontent.com/render/math?math=y_x) oznacza rzeczywistą ilość danego koloru
+- ![](https://render.githubusercontent.com/render/math?math=\widehat{y_x}) oznacza przewidzianą ilość danego koloru
 
-Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data](./data/).
+Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data/2022](./data/2022).
 
 ### Automatyczna sprawdzarka
+
+**Uwaga:** sprawdzarka nie jest jeszcze aktywna.
 
 W celu weryfikacji wyników na zbiorze walidacyjnym uruchomiona została sprawdzarka z której można skorzystać wywołując skrypt `check.py`. Sprawdzarka zwraca wynik miary *MARPE* dla wykorzystanego zbioru lub wyjście z konsoli zawierające wiadomość błędu jaki wystąpił podczas uruchamiania skryptu. Sprawdzarka analzuje jedynie wyniki studentów zapisanych na kurs (w serwisie eKursy), dlatego w skrypcie [`check.py`](./check.py) należy ustawić swój numer indeksu. Z systemu sprawdzającego każdy student może skorzystać raz na 15 minut.
 
