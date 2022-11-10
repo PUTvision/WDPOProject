@@ -141,26 +141,3 @@ Gdzie:
 - ![](https://render.githubusercontent.com/render/math?math=\widehat{y_x}) oznacza przewidzianą ilość danego koloru
 
 Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data/2022](./data/2022).
-
-### Automatyczna sprawdzarka
-
-**Uwaga:** sprawdzarka nie jest jeszcze aktywna.
-
-W celu weryfikacji wyników na zbiorze walidacyjnym uruchomiona została sprawdzarka z której można skorzystać wywołując skrypt `check.py`. Sprawdzarka zwraca wynik miary *MARPE* dla wykorzystanego zbioru lub wyjście z konsoli zawierające wiadomość błędu jaki wystąpił podczas uruchamiania skryptu. Sprawdzarka analzuje jedynie wyniki studentów zapisanych na kurs (w serwisie eKursy), dlatego w skrypcie [`check.py`](./check.py) należy ustawić swój numer indeksu. Z systemu sprawdzającego każdy student może skorzystać raz na 15 minut.
-
-### Progi punktowe
-
-Projekt będzie oceniany biorąc pod uwagę osiągnięty wynik miary *MARPE* na zbiorze testowym zgodnie z przyjętymi zakresami (przedziały prawostronnie domknięte):
-
-<div align="center">
-  
-| Wartość metryki MARPE | Ocena |
-|:---------------------:|:-----:|
-|         ≤ 9 %         |  5.0  |
-|        9 - 18 %       |  4.5  |
-|       18 - 27 %       |  4.0  |
-|       27 - 36 %       |  3.5  |
-|       36 - 45 %       |  3.0  |
-|         > 45 %        |  2.0  |
-
-</div>
