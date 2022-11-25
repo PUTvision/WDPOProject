@@ -11,7 +11,7 @@
 Wraz z postępem technologicznym w obszarze sensorów wizyjnych wzrosło zapotrzebowanie na rozwiązania umożliwiające automatyzację procesów z wykorzystaniem wizyjnej informacji zwrotnej. Ponadto rozwój naukowy w zakresie algorytmów przetwarzania obrazu umożliwia wyciąganie ze zdjęć takich informacji jak ilość obiektów, ich rozmiar, położenie, a także orientacja. Jedną z aplikacji wykorzystujących przetwarzanie obrazu jest automatyczna kontrola ilości obiektów na linii produkcyjnej wraz z rozróżnieniem ich klasy np. w celu ich sortowania w dalszym kroku.
 
 ## Changelog
-**Ostatnia edycja:** 8.11.2022
+**Ostatnia edycja:** 25.11.2022
 
 
 ## Zadanie
@@ -40,7 +40,7 @@ Poniżej przedstawione zostało przykładowe zdjęcie ze zbioru danych i poprawn
 ```
 
 <p align="center">
-  <img width="750" height="500" src="./data/2022/37.jpg">
+  <img width="750" height="500" src="./data/37.jpg">
 </p>
 
 ## Struktura projektu
@@ -50,17 +50,16 @@ Szablon projektu zliczania cukierków na zdjęciach dostępny jest w serwisie [G
 ```bash
 .
 ├── data
-│   └── 2022
-│       ├── 00.jpg
-│       ├── 01.jpg
-│       └── 02.jpg
+│   ├── 00.jpg
+│   ├── 01.jpg
+│   └── 02.jpg
 ├── readme_files
 ├── detect.py
 ├── README.md
 └── requirements.txt
 ```
 
-Katalog [`data/2022`](./data/2022) zawiera przykłady, na podstawie których w pliku [`detect.py`](./detect.py) przygotowany ma zostać algorytm zliczania cukierków. Funkcja `main` w pliku `detect.py` powinna pozostać bez zmian. 
+Katalog [`data`](./data) zawiera przykłady, na podstawie których w pliku [`detect.py`](./detect.py) przygotowany ma zostać algorytm zliczania cukierków. Funkcja `main` w pliku `detect.py` powinna pozostać bez zmian. 
 
 ### Wykorzystanie szablonu
 
@@ -140,4 +139,4 @@ Gdzie:
 - ![](https://render.githubusercontent.com/render/math?math=y_x) oznacza rzeczywistą ilość danego koloru
 - ![](https://render.githubusercontent.com/render/math?math=\widehat{y_x}) oznacza przewidzianą ilość danego koloru
 
-Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data/2022](./data/2022).
+Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data](./data).
