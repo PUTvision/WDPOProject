@@ -3,7 +3,7 @@
 ## Politechnika Poznańska, Instytut Robotyki i Inteligencji Maszynowej
 
 <p align="center">
-  <img width="180" height="180" src="./readme_files/logo.png">
+  <img width="180" height="180" src="./readme_files/logo.svg">
 </p>
 
 # **Projekt zaliczeniowy: zliczanie cukierków**
@@ -92,7 +92,7 @@ Więcej informacji na temat zastosowania plików `requirements.txt` można znale
 - [What is the python requirements.txt?](https://www.idkrtm.com/what-is-the-python-requirements-txt/)
 - [Use requirements.txt](https://www.jetbrains.com/help/pycharm/managing-dependencies.html)
 
-### Wywyołanie programu
+### Wywołanie programu
 
 Skrypt `detect.py` przyjmuje 2 parametry wejściowe:
 - `data_path` - ścieżkę do folderu z danymi (zdjęciami)
