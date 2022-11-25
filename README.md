@@ -79,7 +79,7 @@ Interpreter testujący projekty będzie miał zainstalowane biblioteki:
 - [OpenCV](https://docs.opencv.org/master/) w wersji 4.5.3.56
 - [NumPy](https://numpy.org/) w wersji 1.19.5
 - [Click](https://palletsprojects.com/p/click/) w wersji 7.1.2
-- [tgdm](https://tqdm.github.io/) w wersji 4.62.3
+- [tqdm](https://tqdm.github.io/) w wersji 4.62.3
 
 Natomiast w przypadku wykorzystania w projekcie dodatkowych bibliotek należy przygotować plik `requirements.txt`, zawierający informacje o dodatkowym pakiecie i jego wersji, zgodnie z poniższym przykładem:
 
