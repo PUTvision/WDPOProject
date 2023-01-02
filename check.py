@@ -17,6 +17,9 @@ def main():
     with ZipFile(data, 'w', ZIP_DEFLATED) as zip_file:
         base_path = Path.cwd()
         for file in base_path.rglob('*'):
+            if file.is_relative_to(base_path / 'data'):
+                continue
+
             zip_file.write(file, file.relative_to(base_path))
 
     data.seek(0)
