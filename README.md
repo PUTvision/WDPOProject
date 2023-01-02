@@ -139,3 +139,14 @@ Gdzie:
 - ![](https://render.githubusercontent.com/render/math?math=\widehat{y_x}) oznacza przewidzianą ilość danego koloru
 
 Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data](./data).
+
+
+## Automatyczna sprawdzarka
+
+W celu weryfikacji wyników na zbiorze walidacyjnym uruchomiona została sprawdzarka z której można skorzystać wywołując skrypt `check.py`:
+
+```shell
+python3 check.py
+```
+
+Sprawdzarka zwraca wynik miary *MARPE* dla wykorzystanego zbioru lub wyjście z konsoli zawierające wiadomość błędu jaki wystąpił podczas uruchamiania skryptu. Sprawdzarka analzuje jedynie wyniki studentów zapisanych na kurs (w serwisie eKursy), dlatego w skrypcie [`check.py`](./check.py) należy ustawić swój numer indeksu. Z systemu sprawdzającego każdy student może skorzystać raz na 15 minut.
