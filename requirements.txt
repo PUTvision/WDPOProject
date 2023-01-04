@@ -1,4 +1,4 @@
-numpy==1.19.5
-opencv-python==4.5.3.56
-tqdm==4.62.3
-click==8.0.3
+numpy==1.24.1
+opencv-python<4.6.0
+tqdm==4.64.1
+click==8.1.3

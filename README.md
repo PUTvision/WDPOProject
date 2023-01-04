@@ -11,7 +11,7 @@
 Wraz z postępem technologicznym w obszarze sensorów wizyjnych wzrosło zapotrzebowanie na rozwiązania umożliwiające automatyzację procesów z wykorzystaniem wizyjnej informacji zwrotnej. Ponadto rozwój naukowy w zakresie algorytmów przetwarzania obrazu umożliwia wyciąganie ze zdjęć takich informacji jak ilość obiektów, ich rozmiar, położenie, a także orientacja. Jedną z aplikacji wykorzystujących przetwarzanie obrazu jest automatyczna kontrola ilości obiektów na linii produkcyjnej wraz z rozróżnieniem ich klasy np. w celu ich sortowania w dalszym kroku.
 
 ## Changelog
-**Ostatnia edycja:** 25.11.2022
+**Ostatnia edycja:** 02.01.2023
 
 
 ## Zadanie
@@ -74,11 +74,10 @@ W przypadku chęci wykorzystania przygotowanego szablonu oraz systemu kontroli w
 
 ### Biblioteki
 
-Interpreter testujący projekty będzie miał zainstalowane biblioteki:
-- [OpenCV](https://docs.opencv.org/master/) w wersji 4.5.3.56
-- [NumPy](https://numpy.org/) w wersji 1.19.5
-- [Click](https://palletsprojects.com/p/click/) w wersji 7.1.2
-- [tqdm](https://tqdm.github.io/) w wersji 4.62.3
+Interpreter testujący projekty będzie miał zainstalowane biblioteki w wersjach:
+```bash
+pip install numpy==1.24.1 opencv-python-headless==4.5.5.64 tqdm==4.64.1 click==8.1.3
+```
 
 Natomiast w przypadku wykorzystania w projekcie dodatkowych bibliotek należy przygotować plik `requirements.txt`, zawierający informacje o dodatkowym pakiecie i jego wersji, zgodnie z poniższym przykładem:
 
@@ -140,3 +139,14 @@ Gdzie:
 - $\widehat{y_x}$ oznacza przewidzianą ilość danego koloru
 
 Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data](./data).
+
+
+## Automatyczna sprawdzarka
+
+W celu weryfikacji wyników na zbiorze walidacyjnym uruchomiona została sprawdzarka z której można skorzystać wywołując skrypt `check.py`:
+
+```shell
+python3 check.py
+```
+
+Sprawdzarka zwraca wynik miary *MARPE* dla wykorzystanego zbioru lub wyjście z konsoli zawierające wiadomość błędu jaki wystąpił podczas uruchamiania skryptu. Sprawdzarka analzuje jedynie wyniki studentów zapisanych na kurs (w serwisie eKursy), dlatego w skrypcie [`check.py`](./check.py) należy ustawić swój numer indeksu. Z systemu sprawdzającego każdy student może skorzystać raz na 15 minut.
