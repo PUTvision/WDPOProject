@@ -129,14 +129,14 @@ Skompresowany plik należy wstawić w odpowiednim miejscu na platformie eKursy.
 
 Przesłane rozwiązania zostaną sprawdzone pod kątem plagiatu oraz z wykorzystaniem poniższego wzoru ocenione będzie działanie algorytmu zliczania cukierków:  
 
-<p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\bg_white&space;Mean&space;Absolute&space;Relative&space;Percentage&space;Error&space;[%]&space;=&space;\frac{100}{n}\sum_{t=0}^{n-1}\frac{\left|y_{r}-\widehat{y_{r}}\right|&space;&plus;&space;\left|y_{y}-\widehat{y_{y}}\right|&space;&plus;&space;\left|y_{g}-\widehat{y_{g}}\right|&space;&plus;&space;\left|y_{p}-\widehat{y_{p}}\right|}{y_{r}&plus;y_{y}&plus;y_{g}&plus;y_{p}}" title="\bg_white Mean Absolute Relative Percentage Error [%] = \frac{100}{n}\sum_{t=0}^{n-1}\frac{\left|y_{a}-\widehat{y_{a}}\right| + \left|y_{b}-\widehat{y_{b}}\right| + \left|y_{o}-\widehat{y_{o}}\right|}{y_{a}+y_{b}+y_{o}}" style="background-color: white"/>
-</p>
+```math
+Mean Absolute Relative Percentage Error [ \% ] = \frac{100}{n}\sum_{t=0}^{n-1}\frac{\left|y_{r}-\widehat{y_{r}}\right| + \left|y_{y}-\widehat{y_{y}}\right| + \left|y_{g}-\widehat{y_{g}}\right| + \left|y_{p}-\widehat{y_{p}}\right|}{y_{r} + y_{y} + y_{g} + y_{p}}
+```
 
 Gdzie:
-- ![](https://render.githubusercontent.com/render/math?math=n) oznacza liczbę obrazów
-- ![](https://render.githubusercontent.com/render/math?math=y_x) oznacza rzeczywistą ilość danego koloru
-- ![](https://render.githubusercontent.com/render/math?math=\widehat{y_x}) oznacza przewidzianą ilość danego koloru
+- $n$ oznacza liczbę obrazów
+- $y_x$ oznacza rzeczywistą ilość danego koloru
+- $\widehat{y_x}$ oznacza przewidzianą ilość danego koloru
 
 Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data](./data).
 
