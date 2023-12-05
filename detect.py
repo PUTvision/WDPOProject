@@ -18,18 +18,19 @@ def detect(img_path: str) -> Dict[str, int]:
     Returns
     -------
     Dict[str, int]
-        Dictionary with quantity of each object.
+        A dictionary with the number of each object.
     """
     img = cv2.imread(img_path, cv2.IMREAD_COLOR)
 
     #TODO: Implement detection method.
     
-    red = 0
-    yellow = 0
-    green = 0
-    purple = 0
+    aspen = 0
+    birch = 0
+    hazel = 0
+    maple = 0
+    oak = 0
 
-    return {'red': red, 'yellow': yellow, 'green': green, 'purple': purple}
+    return {'aspen': aspen, 'birch': birch, 'hazel': hazel, 'maple': maple, 'oak': oak}
 
 
 @click.command()
@@ -41,8 +42,8 @@ def main(data_path: Path, output_file_path: Path):
     results = {}
 
     for img_path in tqdm(sorted(img_list)):
-        fruits = detect(str(img_path))
-        results[img_path.name] = fruits
+        leaves = detect(str(img_path))
+        results[img_path.name] = leaves
 
     with open(output_file_path, 'w') as ofp:
         json.dump(results, ofp)
