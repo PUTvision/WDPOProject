@@ -152,14 +152,14 @@ Skompresowany plik należy wstawić w odpowiednim miejscu na platformie eKursy.
 
 Przesłane rozwiązania zostaną sprawdzone pod kątem plagiatu oraz z wykorzystaniem poniższego wzoru ocenione będzie działanie algorytmu zliczania liści:
 
-<p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\bg_white&space;Mean&space;Absolute&space;Relative&space;Percentage&space;Error&space;[%]&space;=&space;\frac{100}{n}\sum_{t=0}^{n-1}\frac{\left|y_{a}-\widehat{y_{a}}\right|&space;&plus;&space;\left|y_{b}-\widehat{y_{b}}\right|&space;&plus;&space;\left|y_{h}-\widehat{y_{h}}\right|&space;&plus;&space;\left|y_{m}-\widehat{y_{m}}\right|&space;&plus;&space;\left|y_{o}-\widehat{y_{o}}\right|}{y_{a}&plus;y_{b}&plus;y_{h}&plus;y_{m}&plus;y_{o}}" title="MAPE" style="background-color: white"/>
+<p align="center" style="background: white;">
+  <img src="https://latex.codecogs.com/png.image?\dpi{120}\bg{white}Mean&space;Absolute&space;Relative&space;Percentage&space;Error&space;[%]&space;=&space;\frac{100}{n}\sum_{t=0}^{n-1}\frac{\left|y_{a}-\widehat{y_{a}}\right|&space;&plus;&space;\left|y_{b}-\widehat{y_{b}}\right|&space;&plus;&space;\left|y_{h}-\widehat{y_{h}}\right|&space;&plus;&space;\left|y_{m}-\widehat{y_{m}}\right|&space;&plus;&space;\left|y_{o}-\widehat{y_{o}}\right|}{y_{a}&plus;y_{b}&plus;y_{h}&plus;y_{m}&plus;y_{o}}" title="MARPE" style="background-color: white;"/>
 </p>
 
 Gdzie:
-- <img src="https://latex.codecogs.com/svg.image?\inline&space;\large&space;\bg{white}n" title="n" style="background-color: white"/> oznacza liczbę obrazów
-- <img src="https://latex.codecogs.com/svg.image?\inline&space;\large&space;\bg{white}y_{x}" title="y_x" style="background-color: white"/> oznacza rzeczywistą ilość liści danego typu
-- <img src="https://latex.codecogs.com/svg.image?\inline&space;\large&space;\bg{white}\widehat{y_{x}}" title="^y_x" style="background-color: white"/> oznacza przewidzianą ilość liści danego typu
+- <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{120}\bg{white}n" title="n" style="background-color: white;"/> oznacza liczbę obrazów
+- <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{120}\bg{white}y_{x}" title="y_x" style="background-color: white;"/> oznacza rzeczywistą ilość liści danego typu
+- <img src="https://latex.codecogs.com/png.image?\inline&space;\dpi{120}\bg{white}\widehat{y_{x}}" title="^y_x" style="background-color: white;"/> oznacza przewidzianą ilość liści danego typu
 
 Końcowy zbiór ewaluacyjny, na którym testowany będzie algorytm jest niepubliczny i niedostępny w czasie realizacji projektu. Do dyspozycji studentów w całości dostępny jest zbiór treningowy dostępny w katalogu [data](./data).
 
