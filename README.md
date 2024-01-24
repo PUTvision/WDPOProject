@@ -83,6 +83,8 @@ W przypadku chęci wykorzystania przygotowanego szablonu oraz systemu kontroli w
 
 ### Biblioteki
 
+W projekcie wykorzystany jest język Python w wersji *3.10*.
+
 Interpreter testujący projekty będzie miał zainstalowane następujące biblioteki w wersjach:
 - `click==8.1.7`
 - `numpy==1.26.2`
